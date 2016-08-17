@@ -1,10 +1,11 @@
-import React from 'react'
+﻿import React from 'react'
 import { render } from 'react-dom'
+import About from './component/map'
 import { Router, Route, Link, browserHistory } from 'react-router'
 
 const App = React.createClass({
   render:function(){
-    return (<div>
+    return (<div className="layout"> 
 		 <Link to="/about">Users</Link>
 		 <Link to="/about2">Users2</Link>
 		{this.props.children}
@@ -12,11 +13,7 @@ const App = React.createClass({
   }
 })
 
-const About = React.createClass({
-  render:function(){
-    return (<div>About</div>);
-  }
-})
+
 
 const About2 = React.createClass({
   render:function(){
@@ -75,10 +72,10 @@ const User = React.createClass({
 // instead, all you really need is a single root route, you don't need to
 // colocate the entire config).
 render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <Route path="/about" component={About}/>
-      <Route path="/about2" component={About2}/>      
+  <Router history={browserHistory} >
+    <Route path="/" component={App} >
+      <Route path="/about" component={About} />
+      <Route path="/about2" component={About2} />      
     </Route>
   </Router>
 ), document.getElementById('root'))
