@@ -75,6 +75,7 @@
 	    );
 	  }
 	});
+	
 	const About = _react2.default.createClass({
 	  render: function () {
 	    return _react2.default.createElement(
@@ -84,6 +85,7 @@
 	    );
 	  }
 	});
+	
 	const About2 = _react2.default.createClass({
 	  render: function () {
 	    return _react2.default.createElement(
@@ -93,6 +95,7 @@
 	    );
 	  }
 	});
+	
 	const AboutOther = _react2.default.createClass({
 	  render: function () {
 	    return _react2.default.createElement(
@@ -175,16 +178,8 @@
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: App },
-	    _react2.default.createElement(_reactRouter.Route, { path: 'about', component: About }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'about2', component: About2 }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '*', component: AboutOther }),
-	    '/*',
-	    _react2.default.createElement(
-	      _reactRouter.Route,
-	      { path: 'users', component: Users },
-	      _react2.default.createElement(_reactRouter.Route, { path: '/user/:userId', component: User })
-	    ),
-	    '*/'
+	    _react2.default.createElement(_reactRouter.Route, { path: '/about', component: About }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/about2', component: About2 })
 	  )
 	), document.getElementById('root'));
 

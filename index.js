@@ -11,16 +11,19 @@ const App = React.createClass({
             </div>);
   }
 })
+
 const About = React.createClass({
   render:function(){
     return (<div>About</div>);
   }
 })
+
 const About2 = React.createClass({
   render:function(){
     return (<div>About2</div>);
   }
 })
+
 const AboutOther = React.createClass({
   render:function(){
     return (<div>Other</div>);
@@ -74,16 +77,8 @@ const User = React.createClass({
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <Route path="*" component={AboutOther}/>
-      <Route path="about" component={About}/>
-      <Route path="about2" component={About2}/>
-
-      
-
-      /*<Route path="users" component={Users}>
-        <Route path="/user/:userId" component={User}/>
-      </Route>*/
-
+      <Route path="/about" component={About}/>
+      <Route path="/about2" component={About2}/>      
     </Route>
   </Router>
 ), document.getElementById('root'))
