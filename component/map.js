@@ -1,4 +1,4 @@
-import React from 'react'
+п»їimport React from 'react'
 
 const About = React.createClass({
   render:function(){
@@ -22,73 +22,73 @@ function init () {
             searchControlProvider: 'yandex#search'
         }),
 
-    // Создаем геообъект с типом геометрии "Точка".
+    // РЎРѕР·РґР°РµРј РіРµРѕРѕР±СЉРµРєС‚ СЃ С‚РёРїРѕРј РіРµРѕРјРµС‚СЂРёРё "РўРѕС‡РєР°".
         myGeoObject = new ymaps.GeoObject({
-            // Описание геометрии.
+            // РћРїРёСЃР°РЅРёРµ РіРµРѕРјРµС‚СЂРёРё.
             geometry: {
                 type: "Point",
                 coordinates: [55.8, 37.8]
             },
-            // Свойства.
+            // РЎРІРѕР№СЃС‚РІР°.
             properties: {
-                // Контент метки.
-                iconContent: 'Я тащусь',
-                hintContent: 'Ну давай уже тащи'
+                // РљРѕРЅС‚РµРЅС‚ РјРµС‚РєРё.
+                iconContent: 'РЇ С‚Р°С‰СѓСЃСЊ',
+                hintContent: 'РќСѓ РґР°РІР°Р№ СѓР¶Рµ С‚Р°С‰Рё'
             }
         }, {
-            // Опции.
-            // Иконка метки будет растягиваться под размер ее содержимого.
+            // РћРїС†РёРё.
+            // РРєРѕРЅРєР° РјРµС‚РєРё Р±СѓРґРµС‚ СЂР°СЃС‚СЏРіРёРІР°С‚СЊСЃСЏ РїРѕРґ СЂР°Р·РјРµСЂ РµРµ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ.
             preset: 'islands#blackStretchyIcon',
-            // Метку можно перемещать.
+            // РњРµС‚РєСѓ РјРѕР¶РЅРѕ РїРµСЂРµРјРµС‰Р°С‚СЊ.
             draggable: true
         });
 
     myMap.geoObjects
         .add(myGeoObject)
         .add(new ymaps.Placemark([55.684758, 37.738521], {
-            balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+            balloonContent: 'С†РІРµС‚ <strong>РІРѕРґС‹ РїР»СЏР¶Р° Р±РѕРЅРґРё</strong>'
         }, {
             preset: 'islands#icon',
             iconColor: '#0095b6'
         }))
         .add(new ymaps.Placemark([55.833436, 37.715175], {
-            balloonContent: '<strong>серобуромалиновый</strong> цвет'
+            balloonContent: '<strong>СЃРµСЂРѕР±СѓСЂРѕРјР°Р»РёРЅРѕРІС‹Р№</strong> С†РІРµС‚'
         }, {
             preset: 'islands#dotIcon',
             iconColor: '#735184'
         }))
         .add(new ymaps.Placemark([55.687086, 37.529789], {
-            balloonContent: 'цвет <strong>влюбленной жабы</strong>'
+            balloonContent: 'С†РІРµС‚ <strong>РІР»СЋР±Р»РµРЅРЅРѕР№ Р¶Р°Р±С‹</strong>'
         }, {
             preset: 'islands#circleIcon',
             iconColor: '#3caa3c'
         }))
         .add(new ymaps.Placemark([55.782392, 37.614924], {
-            balloonContent: 'цвет <strong>детской неожиданности</strong>'
+            balloonContent: 'С†РІРµС‚ <strong>РґРµС‚СЃРєРѕР№ РЅРµРѕР¶РёРґР°РЅРЅРѕСЃС‚Рё</strong>'
         }, {
             preset: 'islands#circleDotIcon',
             iconColor: 'yellow'
         }))
         .add(new ymaps.Placemark([55.642063, 37.656123], {
-            balloonContent: 'цвет <strong>красный</strong>'
+            balloonContent: 'С†РІРµС‚ <strong>РєСЂР°СЃРЅС‹Р№</strong>'
         }, {
             preset: 'islands#redSportIcon'
         }))
         .add(new ymaps.Placemark([55.826479, 37.487208], {
-            balloonContent: 'цвет <strong>фэйсбука</strong>'
+            balloonContent: 'С†РІРµС‚ <strong>С„СЌР№СЃР±СѓРєР°</strong>'
         }, {
             preset: 'islands#governmentCircleIcon',
             iconColor: '#3b5998'
         }))
         .add(new ymaps.Placemark([55.694843, 37.435023], {
-            balloonContent: 'цвет <strong>носика Гены</strong>',
-            iconCaption: 'Очень длиннный, но невероятно интересный текст'
+            balloonContent: 'С†РІРµС‚ <strong>РЅРѕСЃРёРєР° Р“РµРЅС‹</strong>',
+            iconCaption: 'РћС‡РµРЅСЊ РґР»РёРЅРЅРЅС‹Р№, РЅРѕ РЅРµРІРµСЂРѕСЏС‚РЅРѕ РёРЅС‚РµСЂРµСЃРЅС‹Р№ С‚РµРєСЃС‚'
         }, {
             preset: 'islands#greenDotIconWithCaption'
         }))
         .add(new ymaps.Placemark([55.790139, 37.814052], {
-            balloonContent: 'цвет <strong>голубой</strong>',
-            iconCaption: 'Очень длиннный, но невероятно интересный текст'
+            balloonContent: 'С†РІРµС‚ <strong>РіРѕР»СѓР±РѕР№</strong>',
+            iconCaption: 'РћС‡РµРЅСЊ РґР»РёРЅРЅРЅС‹Р№, РЅРѕ РЅРµРІРµСЂРѕСЏС‚РЅРѕ РёРЅС‚РµСЂРµСЃРЅС‹Р№ С‚РµРєСЃС‚'
         }, {
             preset: 'islands#blueCircleDotIconWithCaption',
             iconCaptionMaxWidth: '50'
