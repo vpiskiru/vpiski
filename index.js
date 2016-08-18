@@ -4,8 +4,6 @@ import About from "./component/map";
 import {Router, Route, Link, browserHistory} from "react-router";
 import injectTapEventPlugin from "react-tap-event-plugin";
 import EventPage from "./component/eventPage";
-import getMuiTheme from "material-ui/styles/getMuiTheme";
-import lightBaseTheme from "material-ui/styles/baseThemes/lightBaseTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import FlatButton from "material-ui/FlatButton";
@@ -27,23 +25,12 @@ const App = React.createClass({
     }
 });
 
-function handleTouchTap() {
-    alert('onTouchTap triggered on the title component');
-}
-
-const styles = {
-    title: {
-        cursor: 'pointer',
-    },
-};
-
 class Title extends Component {
     render() {
         return (
             <div className="layout">
                 <AppBar
-                    title={<span style={styles.title}>Title</span>}
-                    onTitleTouchTap={handleTouchTap}
+                    title="Title"
                     iconElementRight={
                         <div>
                             <Link to="/about"><FlatButton label="Users"/></Link>
@@ -117,7 +104,7 @@ const User = React.createClass({
 // instead, all you really need is a single root route, you don't need to
 // colocate the entire config).
 render((
-    <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+    <MuiThemeProvider>
         <div>
             <Router history={browserHistory}>
                 <Route path="/" component={Title}>
