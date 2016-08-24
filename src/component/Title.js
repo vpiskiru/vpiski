@@ -9,7 +9,7 @@ import IconButton from "material-ui/IconButton/IconButton";
 import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
 
 const PlusIconButton = () => (
-    <Link to="/event">
+    <Link to="/eventEdit">
         <IconButton>
             <FontIcon className="material-icons">add</FontIcon>
         </IconButton>
@@ -48,7 +48,7 @@ class Title extends Component {
                     iconElementLeft={
                         <div>
                             <Link to="/about"><FlatButton label="Поиск"/></Link>
-                            <Link to="/about2"><FlatButton label="Встречи"/></Link>
+                            <Link to="/events"><FlatButton label="Встречи"/></Link>
                         </div>
                     }
                     iconElementRight={

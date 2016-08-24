@@ -3,20 +3,15 @@ import {render} from "react-dom";
 import About from "./component/map";
 import Title from "./component/Title";
 import injectTapEventPlugin from "react-tap-event-plugin";
-import EventPage from "./component/eventPage";
+import EventEditPage from "./component/EventEditPage";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import {Router, Route, Link, browserHistory} from "react-router";
+import EventLookupPage from "./component/EventLookupPage";
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
-
-const About2 = React.createClass({
-    render: function () {
-        return (<div>About2</div>);
-    }
-});
 
 const AboutOther = React.createClass({
     render: function () {
@@ -75,8 +70,8 @@ render((
             <Router history={browserHistory}>
                 <Route path="/" component={Title}>
                     <Route path="/about" component={About}/>
-                    <Route path="/about2" component={About2}/>
-                    <Route path="/event" component={EventPage}/>
+                    <Route path="/events" component={EventLookupPage}/>
+                    <Route path="/eventEdit" component={EventEditPage}/>
                 </Route>
             </Router>
         </div>
