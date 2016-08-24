@@ -27,7 +27,7 @@ const PaperSubheader2 = () => (
 );
 
 
-class EventPage extends Component {
+class EventLookupPage extends Component {
 
     render() {
         return (
@@ -39,4 +39,4 @@ class EventPage extends Component {
     }
 }
 
-export default EventPage;
+export default EventLookupPage;

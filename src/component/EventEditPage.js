@@ -17,7 +17,7 @@ const styles = {
     },
 };
 
-class EventPage extends Component {
+class EventEditPage extends Component {
 
     render() {
         return (
@@ -35,4 +35,4 @@ class EventPage extends Component {
     }
 }
 
-export default EventPage;
+export default EventEditPage;
