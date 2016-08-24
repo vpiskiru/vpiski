@@ -1,19 +1,60 @@
 import React, {Component} from "react";
 import FlatButton from "material-ui/FlatButton";
-import {Router, Route, Link, browserHistory} from "react-router";
-import AppBar from 'material-ui/AppBar';
+import {Link} from "react-router";
+import AppBar from "material-ui/AppBar";
+import FontIcon from "material-ui/FontIcon";
+import IconMenu from "material-ui/IconMenu";
+import MenuItem from "material-ui/MenuItem";
+import IconButton from "material-ui/IconButton/IconButton";
+import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
+
+const PlusIconButton = () => (
+    <Link to="/event">
+        <IconButton>
+            <FontIcon className="material-icons">add</FontIcon>
+        </IconButton>
+    </Link>
+);
+
+//TODO menu not hold to right top! Why?
+const RightMenuIcon = () => (
+    <IconMenu
+        iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+        targetOrigin={{horizontal: 'right', vertical: 'top'}}
+        anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+    >
+
+        <MenuItem primaryText="Refresh"/>
+        <MenuItem primaryText="Help"/>
+        <MenuItem primaryText="Sign out"/>
+    </IconMenu>
+);
+
+// Arrow for future header return back button
+const ArrowBackButton = () => (
+    <Link to="/about">
+        <IconButton>
+            <FontIcon className="material-icons">arrow_back</FontIcon>
+        </IconButton>
+    </Link>
+);
+
 
 class Title extends Component {
     render() {
         return (
             <div className="layout">
                 <AppBar
-                    title="Title"
+                    iconElementLeft={
+                        <div>
+                            <Link to="/about"><FlatButton label="Поиск"/></Link>
+                            <Link to="/about2"><FlatButton label="Встречи"/></Link>
+                        </div>
+                    }
                     iconElementRight={
                         <div>
-                            <Link to="/about"><FlatButton label="Users"/></Link>
-                            <Link to="/about2"><FlatButton label="Users2"/></Link>
-                            <Link to="/event"><FlatButton label="Event"/></Link>
+                            <PlusIconButton/>
+                            <RightMenuIcon/>
                         </div>
                     }
                 />
