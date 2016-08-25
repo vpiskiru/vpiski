@@ -1,6 +1,6 @@
-﻿import React from 'react'
+import React from 'react'
 
-const About = React.createClass({
+const Map = React.createClass({
   render:function(){
     alert("render");
     var styler={
@@ -97,4 +97,4 @@ function init () {
   }
 })
 
-export default About;
+export default Map;
