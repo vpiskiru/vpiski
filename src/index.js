@@ -9,8 +9,10 @@ import { Provider } from 'react-redux'
 import App from "./Containers/App";
 import EventList from "./Containers/EventList";
 import Map from "./component/map";
-import EventPage from "./component/eventPage";
 import Store from './store/Store';
+import EventLookupPage from "./component/EventLookupPage";
+import EventEditPage from "./component/EventEditPage";
+import EventPage from "./component/eventPage";
 
 const store = Store()
 
@@ -25,6 +27,8 @@ render((
             <Route path="/map" component={Map}/>
             <Route path="/list" component={EventList}/>  
             <Route path="/event" component={EventPage}/>
+            <Route path="/eventEdit" component={EventEditPage}/>
+            <Route path="/events2" component={EventLookupPage}/>
           </Route>
         </Router>
       </Provider>
