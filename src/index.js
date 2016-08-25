@@ -12,7 +12,6 @@ import Map from "./component/map";
 import Store from './store/Store';
 import EventLookupPage from "./component/EventLookupPage";
 import EventEditPage from "./component/EventEditPage";
-import EventPage from "./component/eventPage";
 
 const store = Store()
 
@@ -26,7 +25,6 @@ render((
           <Route path="/" component={App}>
             <Route path="/map" component={Map}/>
             <Route path="/list" component={EventList}/>  
-            <Route path="/event" component={EventPage}/>
             <Route path="/eventEdit" component={EventEditPage}/>
             <Route path="/events2" component={EventLookupPage}/>
           </Route>
