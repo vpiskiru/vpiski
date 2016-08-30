@@ -20,6 +20,7 @@ class EventList extends Component {
             <List>
               {this.props.events.map(data=>
                   <ListItem
+                    key={data.userName}
                     primaryText={data.userName}
                     secondaryText={data.descriptor}
                     leftAvatar={<Avatar src={data.avatar} />}

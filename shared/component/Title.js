@@ -31,20 +31,26 @@ const RightMenuIcon = () => (
 );
 
 // Arrow for future header return back button
-const ArrowBackButton = () => (
+/*const ArrowBackButton = () => (
     <Link to="/about">
         <IconButton>
             <FontIcon className="material-icons">arrow_back</FontIcon>
         </IconButton>
     </Link>
-);
+);*/
+
 
 
 class Title extends Component {
     render() {
         return <AppBar               
-              title="vpiski2"           
-              iconElementRight={<RightMenuIcon/>}
+              title="vpiski2"
+              iconElementRight={
+                <div>
+                  <PlusIconButton/>
+                  <RightMenuIcon/>
+                </div>
+              }
             />  
     }
 }	

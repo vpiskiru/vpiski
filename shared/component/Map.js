@@ -2,7 +2,7 @@ import React from 'react'
 
 const Map = React.createClass({
   render:function(){
-    alert("render");
+    //alert("render");
     var styler={
       height:"100%"
     }
@@ -10,7 +10,7 @@ const Map = React.createClass({
   },
 
   componentDidMount:function(){
-	alert(213);
+
 	/*ymaps.ready(init);*/
         init();
 

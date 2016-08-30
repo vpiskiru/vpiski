@@ -24,6 +24,7 @@ module.exports = {
         loaders: ['react-hot', 'babel-loader'], //добавили loader 'react-hot'
         include: [
           path.resolve(__dirname, "client"),
+          path.resolve(__dirname, "shared")
         ],
         test: /\.js$/,
         plugins: ['transform-runtime'],

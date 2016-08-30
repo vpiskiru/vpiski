@@ -29,7 +29,7 @@ class App extends Component{
 
             <Tabs ref="tabPanel" onChange={::this.onChange} value={this.props.location.pathname}>
               <Tab label="Поиск" value={"/map"}></Tab>
-              <Tab label="Знакомства" value={"/events2"}></Tab>
+              <Tab label="Знакомства" value={"/meetings"}></Tab>
             </Tabs> 
           
             <div >

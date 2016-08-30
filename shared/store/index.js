@@ -1,8 +1,6 @@
 import { createStore, applyMiddleware, compose  } from 'redux'
 import rootReducer from '../reducers'
-import DevTools from "../containers/DevTools";
-
-
+//import DevTools from "../client/containers/DevTools";
   
 var initialState  ={  
   user: 'Unknown User 2',
@@ -25,10 +23,10 @@ var initialState  ={
       descriptor:"Девчёнки, давайте бухать.",
       avatar:"1.jpg"
     }
- 
   ]
 }
 
+//пробник :)
 function logger({ getState }) {
   return (next) => (action) => {
     console.log('will dispatch', action)
@@ -38,6 +36,7 @@ function logger({ getState }) {
   }
 }
 
+
 const enhancer = compose(
   // Middleware you want to use in development:
   applyMiddleware(logger),
@@ -45,11 +44,11 @@ const enhancer = compose(
   // если установлен плагин для хрома, тогда юзается расширение (уточнить что с изоморфностью, window то нет)
   //window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument()
 
-  window?window.devToolsExtension():f=>f
+  global ? f=>f : window.devToolsExtension()
 );
 
 export default function configureStore() {
-  const store = createStore(rootReducer, initialState, enhancer)
+  const store = createStore(rootReducer, initialState, enhancer);
 
   if (module.hot) {
     module.hot.accept('../reducers', () => {
