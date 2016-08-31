@@ -1,8 +1,6 @@
 //server
 import express from 'express';
 import path    from 'path';
-import fs from 'fs';
-import ejs from "ejs";
 
 //webpack и горячая перезагрузка
 import webpack from 'webpack';
@@ -29,7 +27,7 @@ import Store from "../shared/Store";
 var app = new express();
 var port = 3000;
 
-//ejs
+//настройки шаблонизатора
 app.set('views',__dirname);
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
@@ -59,9 +57,7 @@ app.use((req, res)=>{
     var initialView =(
       <MuiTheme userAgent={req.headers['user-agent']}>
         <Provider store={store}>
-          <div>
             <RouterContext {...renderProps} />
-          </div>
         </Provider>
       </MuiTheme>
     );
