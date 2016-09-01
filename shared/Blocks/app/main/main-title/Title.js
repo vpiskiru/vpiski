@@ -9,7 +9,7 @@ import IconButton from "material-ui/IconButton/IconButton";
 import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
 
 const PlusIconButton = () => (
-    <Link to="/eventEdit">
+    <Link to="/meetingEdit">
         <IconButton>
             <FontIcon className="material-icons">add</FontIcon>
         </IconButton>

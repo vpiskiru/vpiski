@@ -8,7 +8,7 @@ import DatePicker from 'material-ui/DatePicker';
 import TimePicker from 'material-ui/TimePicker';
 import Avatar from 'material-ui/Avatar';
 import TextField from 'material-ui/TextField';
-import TitleBack from './title-back/TitleBack';
+import TitleBack from '../title-back/TitleBack';
 
 const styles = {
     container: {

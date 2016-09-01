@@ -9,6 +9,7 @@ import EventList from "./Blocks/app/main/find/list/EventList";
 import Map from "./Blocks/app/main/find/map/Map";
 import EventLookupPage from "./Blocks/app/main/contacts/EventLookupPage";
 import EventEditPage from "./Blocks/app/meeting-edit/EventEditPage";
+import MeetingView from "./Blocks/app/meeting-view/MeetingView";
 
 export default (
   <Route path="/" component={App}>
@@ -17,6 +18,7 @@ export default (
       <Route path="map" component={EventList}/>
       <Route path="meetings" component={EventLookupPage}/>
     </Route>
-    <Route path="eventEdit" component={EventEditPage}/>
+    <Route path="meetingEdit" component={EventEditPage}/>
+    <Route path="meetingView" component={MeetingView}/>
   </Route>
 )

@@ -3,18 +3,24 @@ import {List, ListItem} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
 import { connect } from 'react-redux';
+import {browserHistory} from "react-router";
 
 class EventList extends Component {
+  onClick(item){
+    browserHistory.push("/meetingView?id="+item.userName);
+  }
+
   render() {
     return (
       <div>
         <List>
-          {this.props.events.map(data=>
+          {this.props.events.map(item=>
             <ListItem
-              key={data.userName}
-              primaryText={data.userName}
-              secondaryText={data.descriptor}
-              leftAvatar={<Avatar src={data.avatar} />}
+              onClick={this.onClick.bind(this,item)}
+              key={item.userName}
+              primaryText={item.userName}
+              secondaryText={item.descriptor}
+              leftAvatar={<Avatar src={item.avatar} />}
               rightIcon={<CommunicationChatBubble />}
             />
           )}
