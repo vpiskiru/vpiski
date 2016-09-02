@@ -1,7 +1,13 @@
-const initialState = {
-  user: 'Unknown User'
-};
+import { combineReducers} from 'redux'
 
-export default function userstate(state = initialState) {
-  return state;
+export default function userstate(state = initialState, action) {
+  //console.log(action);
+      return {
+        ...state
+      };
 }
+
+
+/*combineReducers({
+  routing: routerReducer //ненужен на сервере
+})*/

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import {browserHistory} from "react-router";
 
 class EventList extends Component {
+
   onClick(item){
     browserHistory.push("/meetingView?id="+item.userName);
   }

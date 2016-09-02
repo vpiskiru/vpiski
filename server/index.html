@@ -15,6 +15,9 @@
 
   <body>
     <div id="root"><%-componentHTML%></div>
+    <script type="text/javascript">
+      window.initialState=<%-initialState%>;
+    </script>
 
     <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="//vk.com/js/api/openapi.js"></script>

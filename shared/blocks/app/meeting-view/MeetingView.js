@@ -10,7 +10,7 @@ const styles = {
   }
 };
 
-//использование br это такой же позор длz верстальщика, как обосратьсь в метро :)
+
 class MeetingView extends Component {
   render() {
     return (

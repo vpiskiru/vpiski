@@ -23,6 +23,7 @@ import createLocation            from 'history/lib/createLocation';
 import routes from "../shared/Routers";
 import MuiTheme from "../shared/muiTheme";
 import Store from "../shared/Store";
+import initialState from "./initState";
 
 var app = new express();
 var port = 3000;
@@ -42,7 +43,10 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use((req, res)=>{
   const location = createLocation(req.url);
-  const store = Store();
+
+  const store = Store({
+    state: initialState
+  });
 
   match({ routes, location }, (err, redirectLocation, renderProps) => {
     if(err) {
@@ -64,7 +68,8 @@ app.use((req, res)=>{
 
     res.render("index.html", {
       layout: false,
-      componentHTML:renderToString(initialView)
+      componentHTML:renderToString(initialView),
+      initialState:JSON.stringify(store.getState())
     });
 
   });
