@@ -22,7 +22,7 @@ import createLocation            from 'history/lib/createLocation';
 //приложение
 import routes from "../shared/Routers";
 import MuiTheme from "../shared/muiTheme";
-import Store from "../shared/Store";
+import Store from "../shared/store";
 import initialState from "./initState";
 
 var app = new express();

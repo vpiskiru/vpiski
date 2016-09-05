@@ -7,7 +7,7 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 //app
 import routes from "../shared/Routers";
 import MuiTheme from "../shared/muiTheme";
-import Store from "../shared/Store";
+import Store from "../shared/store";
 
 
 const store = Store({
