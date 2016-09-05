@@ -3,13 +3,13 @@ import React, {Component} from "react";
 import {Route, IndexRoute } from "react-router";
 
 //app
-import App from "./Blocks/app/App";
-import Main from "./Blocks/app/main/Main";
-import EventList from "./Blocks/app/main/find/list/EventList";
-import Map from "./Blocks/app/main/find/map/Map";
-import EventLookupPage from "./Blocks/app/main/contacts/EventLookupPage";
-import EventEditPage from "./Blocks/app/meeting-edit/EventEditPage";
-import MeetingView from "./Blocks/app/meeting-view/MeetingView";
+import App from "./blocks/app/App";
+import Main from "./blocks/app/main/Main";
+import EventList from "./blocks/app/main/find/list/EventList";
+import Map from "./blocks/app/main/find/map/Map";
+import EventLookupPage from "./blocks/app/main/contacts/EventLookupPage";
+import EventEditPage from "./blocks/app/meeting-edit/EventEditPage";
+import MeetingView from "./blocks/app/meeting-view/MeetingView";
 
 export default (
   <Route path="/" component={App}>
