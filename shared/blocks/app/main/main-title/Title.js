@@ -1,11 +1,10 @@
 import React, {Component} from "react";
-import FlatButton from "material-ui/FlatButton";
 import {Link} from "react-router";
 import AppBar from "material-ui/AppBar";
 import FontIcon from "material-ui/FontIcon";
-import IconMenu from "material-ui/IconMenu";
 import MenuItem from "material-ui/MenuItem";
 import IconButton from "material-ui/IconButton/IconButton";
+import IconMenu from "material-ui/IconMenu";
 import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
 
 const PlusIconButton = () => (
@@ -16,42 +15,44 @@ const PlusIconButton = () => (
     </Link>
 );
 
-//TODO menu not hold to right top! Why?
-const RightMenuIcon = () => (
-    <IconMenu
-        iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-        targetOrigin={{horizontal: 'right', vertical: 'top'}}
-        anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-    >
+const style = {
+    display: 'inline-block',
+    margin: '16px 32px 16px 0',
+};
 
+//TODO menu not hold to right top! Why?
+const MenuIconButton = () => (
+    <IconMenu iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+              menuStyle={style}
+    >
         <MenuItem primaryText="Refresh"/>
         <MenuItem primaryText="Help"/>
         <MenuItem primaryText="Sign out"/>
     </IconMenu>
+
 );
 
-// Arrow for future header return back button
-/*const ArrowBackButton = () => (
-    <Link to="/about">
-        <IconButton>
-            <FontIcon className="material-icons">arrow_back</FontIcon>
-        </IconButton>
-    </Link>
-);*/
-
-
+//TODO search button? Do we need it?
+/*const SearchIconButton = () => (
+ <Link to="/find">
+ <IconButton>
+ <FontIcon className="material-icons">search</FontIcon>
+ </IconButton>
+ </Link>
+ );*/
 
 class Title extends Component {
     render() {
-        return <AppBar               
-              title="vpiski2"
-              iconElementRight={
+        return <AppBar
+            showMenuIconButton={false}
+            title="vpiski2"
+            iconElementRight={
                 <div>
-                  <PlusIconButton/>
-                  <RightMenuIcon/>
+                    <PlusIconButton/>
+                    <MenuIconButton/>
                 </div>
-              }
-            />  
+            }
+        />
     }
-}	
+}
 export default Title;

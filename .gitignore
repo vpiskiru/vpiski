@@ -1,4 +1,5 @@
 bundle.js
 favicon.ico
-.idea
+.idea/
 node_modules
+*.log
