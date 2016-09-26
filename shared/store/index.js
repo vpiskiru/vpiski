@@ -18,11 +18,11 @@ function logger({ getState }) {
 //middlewares (TODO может стоит вынести в middlewares/index.js ?)
 const enhancer = compose(
   applyMiddleware(thunk),    // для асинхронных action (возвращающих функцию)
-  applyMiddleware(logger),   // лог для отладки
+  applyMiddleware(logger)   // лог для отладки
 
   // если установлен плагин для хрома, тогда юзается расширение (уточнить что с изоморфностью, window то нет)
   //window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument()
-  (global && global.document) ? window.devToolsExtension():f=>f // TODO ненадёжная проверка
+  //(global && global.document) ? window.devToolsExtension():f=>f // TODO ненадёжная проверка
 );
 
 

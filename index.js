@@ -5,7 +5,7 @@ require('babel-polyfill');
 
 var server = require('./server/server').default;
 
-const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 server.listen(PORT, function(error) {
   if (error) {
