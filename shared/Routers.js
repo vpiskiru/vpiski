@@ -7,8 +7,8 @@ import App from "./blocks/app/App";
 import Main from "./blocks/app/main/Main";
 import EventList from "./blocks/app/main/find/list/EventList";
 import EventLookupPage from "./blocks/app/main/contacts/EventLookupPage";
-import EventEditPage from "./blocks/app/meeting-edit/EventEditPage";
-import MeetingView from "./blocks/app/meeting-view/MeetingView";
+import EventEditPage from "./Blocks/app/meeting/EventEditPage";
+import MeetingView from "./Blocks/app/meeting/MeetingView";
 import FindContainer from './blocks/app/main/find/FindContainer';
 
 export default (
