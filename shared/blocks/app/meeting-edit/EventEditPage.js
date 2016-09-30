@@ -1,16 +1,10 @@
-/**
- * In this file, we create a React component
- * which incorporates components providedby material-ui.
- */
 import React, {Component} from "react";
 import RaisedButton from "material-ui/RaisedButton";
 import DatePicker from "material-ui/DatePicker";
 import TimePicker from "material-ui/TimePicker";
 import TextField from "material-ui/TextField";
 import TitleBack from "../title-back/TitleBack";
-import Paper from "material-ui/Paper";
-import FontIcon from "material-ui/FontIcon";
-import IconButton from "material-ui/IconButton/IconButton";
+import ImageLoaderButton from "../component/ImageLoader";
 
 const styles = {
     container: {
@@ -23,27 +17,6 @@ const styles = {
     }
 };
 
-const imageStyle = {
-    height: 100,
-    width: 100,
-    margin: 20,
-    textAlign: 'center',
-    display: 'inline-block',
-};
-
-class EditImageButton extends Component {
-    render() {
-        return (
-            <Paper style={imageStyle} zDepth={1}>
-                <IconButton>
-                    <FontIcon className="material-icons">add</FontIcon>
-                </IconButton>
-            </Paper>
-        );
-    }
-}
-
-//использование br это такой же позор длz верстальщика, как обосратьсь в метро :)
 class EventEditPage extends Component {
     render() {
         return (
@@ -51,10 +24,8 @@ class EventEditPage extends Component {
                 <TitleBack title="New meeting"/>
                 <div style={styles.container}>
                     <div>
-                        <EditImageButton/>
-                        <EditImageButton/>
-                        <EditImageButton/>
-                        <EditImageButton/>
+                        <ImageLoaderButton/>
+                        <ImageLoaderButton/>
                     </div>
                     <h4>Enter event info</h4>
                     <DatePicker hintText="Event date" mode="landscape"/>
