@@ -6,6 +6,12 @@ import {fullWhite, grey500} from "material-ui/styles/colors";
 import ContentAdd from "material-ui/svg-icons/content/add";
 
 const styles = {
+    mainStyle: {
+        background: "green",
+        //flex: 1,
+        height: 100,
+        width: 100
+    },
     button: {
         margin: 12,
         height: 100,
@@ -36,11 +42,16 @@ class ImageLoaderButton extends Component {
     };
 
     handlePictureLoad(event) {
-        this.setState({picture: event.target.value});
+        var reader = new FileReader();
+        reader.onload = (e) => {
+            this.setState({picture: e.target.result});
+        };
+        // Начинаем считывать изображение
+        reader.readAsDataURL(event.target.files[0]);
     };
 
     handleOpen = () => {
-        this.setState({open: true});
+        this.setState({open: true, picture:[]});
     };
 
     handleClose = () => {
@@ -63,7 +74,7 @@ class ImageLoaderButton extends Component {
         ];
 
         return (
-            <div>
+            <div style={styles.mainStyle}>
                 <div>
                     <RaisedButton
                         backgroundColor={grey500}
@@ -81,7 +92,7 @@ class ImageLoaderButton extends Component {
                 >
 
                     <div>Where from we download your picture?</div>
-                    <img src={this.state.picture} />
+                    <img src={this.state.picture}/>
                     <FlatButton label="Choose an Image" labelPosition="before">
                         <input type="file" onChange={this.handlePictureLoad} style={styles.exampleImageInput}/>
                     </FlatButton>

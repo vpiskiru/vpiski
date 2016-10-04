@@ -14,7 +14,11 @@ const styles = {
 
     saveBtn: {
         marginTop: "30px"
-    }
+    },
+    loaderImageStyle: {
+        display: "flex",
+        background: "red",
+    },
 };
 
 class EventEditPage extends Component {
@@ -23,7 +27,7 @@ class EventEditPage extends Component {
             <div style={{display: "flex", flexDirection: "column"}}>
                 <TitleBack title="New meeting"/>
                 <div style={styles.container}>
-                    <div>
+                    <div style={styles.loaderImageStyle}>
                         <ImageLoaderButton/>
                         <ImageLoaderButton/>
                     </div>
