@@ -3,3 +3,5 @@ favicon.ico
 .idea/
 node_modules
 *.log
+*.iml
+dist/

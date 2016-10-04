@@ -32,15 +32,6 @@ const MenuIconButton = () => (
 
 );
 
-//TODO search button? Do we need it?
-/*const SearchIconButton = () => (
- <Link to="/find">
- <IconButton>
- <FontIcon className="material-icons">search</FontIcon>
- </IconButton>
- </Link>
- );*/
-
 class Title extends Component {
     render() {
         return <AppBar

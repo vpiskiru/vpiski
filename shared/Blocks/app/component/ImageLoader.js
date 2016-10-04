@@ -11,11 +11,32 @@ const styles = {
         height: 100,
         width: 100,
     },
+    exampleImageInput: {
+        cursor: 'pointer',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        right: 0,
+        left: 0,
+        width: '100%',
+        opacity: 0,
+    },
 };
 
 class ImageLoaderButton extends Component {
+
+    constructor(props) {
+        super(props);
+        this.handlePictureLoad = this.handlePictureLoad.bind(this);
+    }
+
     state = {
         open: false,
+        picture: [],
+    };
+
+    handlePictureLoad(event) {
+        this.setState({picture: event.target.value});
     };
 
     handleOpen = () => {
@@ -31,6 +52,12 @@ class ImageLoaderButton extends Component {
             <FlatButton
                 label="Cancel"
                 primary={true}
+                onTouchTap={this.handleClose}
+            />,
+            <FlatButton
+                label="Submit"
+                primary={true}
+                keyboardFocused={true}
                 onTouchTap={this.handleClose}
             />,
         ];
@@ -52,7 +79,13 @@ class ImageLoaderButton extends Component {
                     open={this.state.open}
                     onRequestClose={this.handleClose}
                 >
-                    Where from we download your picture?
+
+                    <div>Where from we download your picture?</div>
+                    <img src={this.state.picture} />
+                    <FlatButton label="Choose an Image" labelPosition="before">
+                        <input type="file" onChange={this.handlePictureLoad} style={styles.exampleImageInput}/>
+                    </FlatButton>
+
                 </Dialog>
             </div>
         );
